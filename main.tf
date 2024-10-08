@@ -45,6 +45,7 @@ data "archive_file" "lambda" {
   type        = "zip"
   source_file = "/root/amazon/lambda/mylambda_function.py"
   output_path = "lambda_function_payload.zip"
+  output_file_mode = "0777"
 }
 
 resource "aws_lambda_function" "my_lambda" {
